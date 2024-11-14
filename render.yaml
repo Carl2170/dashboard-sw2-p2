@@ -1,5 +1,3 @@
-# render.yaml
-
 services:
   - name: web
     type: web
@@ -7,9 +5,9 @@ services:
     dockerfilePath: ./Dockerfile
     envVars:
       - key: DATABASE_URL
-        value: postgresql://dashboard_17mu_user:D22NUvfidtxpb0CkR4trowD0n5qQJJQJ@dpg-csr764t2ng1s73f6mu90-a/dashboard_17mu # Reemplaza <HOSTNAME> con el host de tu base de datos de Render
+        value: postgresql://dashboard_17mu_user:D22NUvfidtxpb0CkR4trowD0n5qQJJQJ@dpg-csr764t2ng1s73f6mu90-a/dashboard_17mu
     plan: starter
     autoscaling:
       minInstances: 1
       maxInstances: 3
-    healthCheckPath: /
+    healthCheckPath: /health  # Ensure your app responds to /health or / path
