@@ -1,0 +1,12 @@
+# Entorno virtual
+venv/
+
+# Ignorar archivos compilados de Python
+__pycache__/
+*.pyc
+
+# Ignorar archivos variables de entorno
+.env
+
+# Ignorar la carpeta de migraciones
+migrations/
