@@ -7,7 +7,7 @@ services:
     dockerfilePath: ./Dockerfile
     envVars:
       - key: DATABASE_URL
-        value: postgresql://postgres:Eyeoftiger123@<HOSTNAME>:5432/dashboard # Reemplaza <HOSTNAME> con el host de tu base de datos de Render
+        value: postgresql://dashboard_17mu_user:D22NUvfidtxpb0CkR4trowD0n5qQJJQJ@dpg-csr764t2ng1s73f6mu90-a/dashboard_17mu # Reemplaza <HOSTNAME> con el host de tu base de datos de Render
     plan: starter
     autoscaling:
       minInstances: 1
