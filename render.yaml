@@ -1,26 +1,15 @@
 # render.yaml
 
 services:
-  - name: db
-    type: database
-    databaseName: dashboard
-    starterPlan: true
-    databaseUser: postgres
-    databasePassword: Eyeoftiger123
-    engine: postgres
-    version: 14
-    # Puedes omitir los volúmenes en Render, ya que Render administra el almacenamiento de la base de datos.
-
   - name: web
     type: web
     env: docker
     dockerfilePath: ./Dockerfile
     envVars:
       - key: DATABASE_URL
-        value: postgresql://postgres:Eyeoftiger123@db:5432/dashboard
+        value: postgresql://postgres:Eyeoftiger123@<HOSTNAME>:5432/dashboard # Reemplaza <HOSTNAME> con el host de tu base de datos de Render
     plan: starter
     autoscaling:
       minInstances: 1
       maxInstances: 3
     healthCheckPath: /
-    # Render maneja los puertos automáticamente, por lo que no es necesario especificarlos aquí.
